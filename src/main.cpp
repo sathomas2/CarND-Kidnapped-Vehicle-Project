@@ -45,7 +45,6 @@ int main()
 
   // Create particle filter
   ParticleFilter pf;
-
   h.onMessage([&pf,&map,&delta_t,&sensor_range,&sigma_pos,&sigma_landmark](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
@@ -78,7 +77,7 @@ int main()
 			// Predict the vehicle's next state from previous (noiseless control) data.
 		  	double previous_velocity = std::stod(j[1]["previous_velocity"].get<std::string>());
 			double previous_yawrate = std::stod(j[1]["previous_yawrate"].get<std::string>());
-
+      
 			pf.prediction(delta_t, sigma_pos, previous_velocity, previous_yawrate);
 		  }
 
@@ -106,8 +105,8 @@ int main()
         	{
         		LandmarkObs obs;
         		obs.x = x_sense[i];
-				obs.y = y_sense[i];
-				noisy_observations.push_back(obs);
+          obs.y = y_sense[i];
+          noisy_observations.push_back(obs);
         	}
 
 		  // Update the weights and resample
@@ -189,90 +188,3 @@ int main()
   }
   h.run();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
