@@ -73,10 +73,8 @@ where, sigma-x and sigma-y are the standard deviations of the LIDAR measurements
 Now I can choose 500 new particles from my current 500, based on their weights. In other words, particles with higher weights are more likely to be chosen for the next iteration of prediction-update. Particles with low weights will most likely be dropped. Particles with very large weights will be probably be chose many times. Therefore, after enough iterations, I will have a single particle that fairly accurately represents my kidnapped vehicle. In other words, the lost car will be found.
 
 ### Results:
-To measure how well the particle filter works, I simply take the Root-Mean-Squared Error of my best particle. After several iterations, as the filter hones in on a single particle, the RMSE stabilizes. Here's a screen shot of the particle filter in action along with the RMSEs for x, y, and theta.
+To measure how well the particle filter works, I simply take the Root-Mean-Squared Error of my best particle. After several iterations, as the filter hones in on a single particle, the RMSE stabilizes. Below is a screen shot of the particle filter in action along with the RMSEs for x, y, and yaw. The green lines represent the ground truth distance of the car from the landmarks and the blue those of the best particle. Ideally, like in the image below, they overlap.
  <figure>
   <img src="readme_images/screenshot.png"/>
 </figure>
  <p></p>
-
-
