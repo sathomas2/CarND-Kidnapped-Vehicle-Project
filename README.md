@@ -1,6 +1,8 @@
 # Vehicle Localization with a Particle Filter in C++
 ### Overview:
-Particle Filters are handy tool for any robotics engineer. They are effective and relatively simple to implement. Most importantly, they are memory efficient because they assume Markov's property or that an estimation of a state's probability distribution need only rely on the previous state, ridding us of the necessity to keep all previous measurements and calculations in memory. In this project, I will localize a kidnapped autonomous car with a particle filter, using initial GPS estimates of the car's position heading angle or theta, noiseless control data of the car's velocity and the rate of change of its steering angle in radians or its yaw rate to predict where it is heading, and a map of the general area along with noisy sensor data to hone in on the car's precise location based on known landmarks in the vicinity, like trees or buildings.
+Particle filters are a handy tool for any robotics engineer. They are effective and relatively simple to implement. Most importantly, they are memory efficient because they assume Markov's property or that an estimation of a state's probability distribution need only rely on the previous state, ridding us of the necessity of keeping all previous measurements and calculations in memory. 
+
+In this project, I will localize a kidnapped autonomous car with a particle filter, using initial GPS estimates of the car's position heading angle or yaw, noiseless control data of the car's velocity and the rate of change of its steering angle in radians or its yaw rate to predict where it is heading, and a map of the general area along with noisy sensor data to hone in on the car's precise location based on known landmarks in the vicinity, like trees or buildings.
 
 The contents of this repository include:
 ```
