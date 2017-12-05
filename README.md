@@ -64,9 +64,9 @@ But first, I need to transform the LIDAR observations from vehicle to global coo
   <img src="readme_images/y_trans_rot.png"/>
 </figure>
  <p></p>
-where x-particle, y-particle, and theta-particle are the particle's coordinates from the prediction step, and x-local and y-local are the observed measurements from the LIDAR. For each particle, I transform the observations into global coordinates. 
+where x-particle, y-particle, and theta-particle are the particle's coordinates from the prediction step, and x-local and y-local are the observed measurements from the LIDAR. 
 
-Afterwards, I loop through the landmarks in the map and, using the Pythagorean theorem, measure the distance of each observation from each landmark. I assume that the landmark closest to each observation represents that observation. I calculate each particle's weight as the product of the Multivariate-Gaussian probabilty of each observation. The Multivariate-Gaussian probabilty of one observation is:
+For each particle, I transform the observations into global coordinates. Then, I loop through the landmarks in the map and, using the Pythagorean theorem, measure the distance of each observation from each landmark. I assume that the landmark closest to each observation represents that observation. I calculate each particle's weight as the product of the Multivariate-Gaussian probabilty of each observation. The Multivariate-Gaussian probabilty of one observation is:
  <figure>
   <img src="readme_images/multivariate_gaussian.png"/>
 </figure>
