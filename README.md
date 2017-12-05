@@ -37,7 +37,7 @@ In the constructer (particle_filter.cpp, lines 24-27), I set the number of parti
 In the init function (particle_filter.cpp, lines 31-51), I initialize the vector "particles" by creating a temporary data structure for all 500 particles, and assigning to each an x, y, and theta member, using the inital GPS estimates of the vehcicle with added random Gaussian noise using the standard deviations provided by the GPS manufacturer. I also assign each particle an initial weight of 1. After initializing all particles, I set the boolean is_initialized to true, so the program skips this step in subsequent passes.
 
 ### Prediction:
-Since I have the control data from the car, its previous velocity and yaw rate, I can estimate each particle's next position and heading angle (i.e., make a prediction) based on the time elapsed since the previous step (particle_filter.cpp, lines 53-78). Using algebra, I know that:
+Since I have the control data from the car, its previous velocity and yaw rate, I can estimate each particle's next position and heading angle (i.e., make a prediction) based on the time elapsed since the previous step (particle_filter.cpp, lines 53-78). Using trigonometry, I know that:
  <figure>
   <img src="readme_images/x_predict.png"/>
 </figure>
